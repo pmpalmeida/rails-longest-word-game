@@ -1,0 +1,33 @@
+
+
+
+
+
+
+<center>
+
+<h1>******** Welcome to the longest word-game !********</h1>
+<p>"Here is your grid:</p>
+<h1><%= @grid %></h1>
+
+
+<h1>******** Type your answer!********</h1>
+
+<form action="/pages/score" method="post">
+  <label for="question">Which word?</label>
+  <input type="text" id="question" name="attempt" placeholder="XXXXX">
+
+
+      <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+
+      <%= hidden_field_tag :start_time, Time.now %>
+
+      <%= hidden_field_tag :grid, @grid %>
+
+  <input type="submit" value="Go on!">
+
+</form>
+
+</center>
+
+
